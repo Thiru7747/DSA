@@ -1,0 +1,5 @@
+ SUBSET:
+ If a Set has all its elements belonging to other sets, this set will be known as a subset of the other set.
+ 
+ For example, Let Set_A = {m, n, o, p, q}, Set_ B = {k, l, m, n, o, p, q, r}
+ Then, A ⊆ B.
