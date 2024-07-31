@@ -10,25 +10,23 @@ public class RotateArray {
 		int d = 2;
 		
 		rotateArr(arr, d, n);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println(arr[i]);
+		}
 	}
 
 	private static void rotateArr(int[] arr, int d, int n) {
-		Stack<Integer> stack = new Stack<>();
-		for (int element : arr) {
-			stack.push(element);
-		}
-		
-		for (Integer element : stack) {
-			if(d > 0) {
-			int popEle = stack.pop();
-			stack.push(popEle);
-			d--;
+			while(d>0) {
+			 int temp = arr[0];
+			 int index = n-1;
+			 for (int j = 0; j < index; j++) {
+				arr[j] = arr[j+1];
 			}
+			 arr[arr.length-1] = temp;
+			 d--;
+			}		
 		}
-System.out.println(stack);
 		
 	}
 	
-	
 
-}
