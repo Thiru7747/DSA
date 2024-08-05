@@ -5,27 +5,31 @@ import java.util.Stack;
 public class RotateArray {
 	
 	public static void main(String[] args) {
-		int arr [] = {1,2,3,4,5};
-		int n= arr.length;
-		int d = 2;
-		
-		rotateArr(arr, d, n);
-		for (int i = 0; i < arr.length; i++) {
-			System.out.println(arr[i]);
-		}
-	}
-
-	private static void rotateArr(int[] arr, int d, int n) {
-			while(d>0) {
-			 int temp = arr[0];
-			 int index = n-1;
-			 for (int j = 0; j < index; j++) {
-				arr[j] = arr[j+1];
+		int nums [] = {1,2,3,4,5};
+		int k = 2;
+		k = k%nums.length;
+		    reverse(nums, 0, nums.length -1);
+	        reverse(nums, 0, k-1);
+	        reverse(nums, k, nums.length -1);
+	        
+	        System.out.println("after the roation of array");
+	        for (int i = 0; i < nums.length; i++) {
+				System.out.print(nums[i]+" ");
 			}
-			 arr[arr.length-1] = temp;
-			 d--;
-			}		
-		}
+
+	}
+	
+	public static void reverse(int[] nums, int start, int end){
+        while(start<end){
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+
 		
 	}
 	
