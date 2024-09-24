@@ -7,13 +7,30 @@ import java.util.Map;
 public class MajorityElement {
 
 	public static void main(String[] args) {
-		int arr[] = { 2, 2, 1, 1, 1, 2, 2 };
+		int arr[] = { 2, 2, 1, 1, 1, 2, 2, 1, 1 };
 //		int majorityElement = getMajorityElement(arr);
-		int majorityElement = getMajorityElementUsingMap(arr);
+//		int majorityElement = getMajorityElementUsingMap(arr);
+		int majorityElement = getMajorityElementUsingMooresAlogorithm(arr);
 		if (majorityElement == -1)
 			System.out.println("Majoirty element not found");
 		else
 			System.out.println("Majoirty element : " + majorityElement);
+	}
+
+	private static int getMajorityElementUsingMooresAlogorithm(int[] arr) {
+		int Majority = arr[0];
+		int votes = 1;
+		for (int i = 1; i < arr.length; i++) {
+			if(votes == 0) {
+				votes++;
+				Majority = arr[i];
+			}else if(Majority == arr[i]) {
+				votes++;
+			}else {
+				votes--;
+			}
+		}
+		return Majority;
 	}
 
 	private static int getMajorityElementUsingMap(int[] nums) {
